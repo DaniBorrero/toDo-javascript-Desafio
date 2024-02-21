@@ -28,6 +28,8 @@ const renderList = () => {
     const contador = document.getElementById('total')
     let cont = allTask.length
     let lista  = ''
+    tagList.innerHTML = ''
+    contador.innerHTML = cont;
     for (let i = 0; i < allTask.length; i++) {
         lista += `
         <tr id='tarea${allTask[i].id}'>
@@ -37,7 +39,7 @@ const renderList = () => {
             <td><i class="fa-solid fa-trash-can pointer" onClick="deleteTask(${allTask[i].id})"></i></td>
       </tr>`
         tagList.innerHTML = lista;
-        contador.innerHTML = cont;
+        
     }
 }
 const deleteTask = (id) => {
